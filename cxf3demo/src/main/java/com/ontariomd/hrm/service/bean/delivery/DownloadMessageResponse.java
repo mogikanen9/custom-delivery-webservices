@@ -1,10 +1,12 @@
-package com.ontariomd.hrm.service.bean;
+package com.ontariomd.hrm.service.bean.delivery;
 
 import javax.activation.DataHandler;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+
+import com.ontariomd.hrm.service.bean.AbstractResponse;
 
 @XmlRootElement
 @XmlType(name="DownloadMessageResponse")

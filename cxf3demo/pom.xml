@@ -81,11 +81,12 @@
 				</dependencies>
 
 				<executions>
+					<!--DeliveryService -->
 					<execution>
 						<goals>
 							<goal>java2ws</goal>
 						</goals>
-						<id>package</id>
+						<id>packageDeliveryService</id>
 						<phase>package</phase>
 						<configuration>
 							<className>com.ontariomd.hrm.service.DeliveryService</className>
@@ -96,6 +97,26 @@
 							<sop12>true</sop12>
 							<argline>-createxsdimports</argline>
 							<serviceName>DeliveryService</serviceName>
+							<attachWsdl>true</attachWsdl>
+						</configuration>
+					</execution>
+
+					<!--UploadService -->
+					<execution>
+						<goals>
+							<goal>java2ws</goal>
+						</goals>
+						<id>packageUploadService</id>
+						<phase>package</phase>
+						<configuration>
+							<className>com.ontariomd.hrm.service.UploadService</className>
+							<genWsdl>true</genWsdl>
+							<verbose>true</verbose>
+							<databinding>jaxb</databinding>
+							<frontend>jaxws</frontend>
+							<sop12>true</sop12>
+							<argline>-createxsdimports</argline>
+							<serviceName>UploadService</serviceName>
 							<attachWsdl>true</attachWsdl>
 						</configuration>
 					</execution>

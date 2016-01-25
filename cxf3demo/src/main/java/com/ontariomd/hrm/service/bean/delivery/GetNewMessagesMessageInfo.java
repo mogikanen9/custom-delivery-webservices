@@ -1,10 +1,12 @@
-package com.ontariomd.hrm.service.bean;
+package com.ontariomd.hrm.service.bean.delivery;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+
+import com.ontariomd.hrm.service.bean.AbstractBean;
 
 @XmlRootElement
 @XmlType(name="GetNewMessagesMessageInfo")
@@ -13,21 +15,21 @@ public class GetNewMessagesMessageInfo extends AbstractBean{
 
 	private static final long serialVersionUID = 1L;
 
-	@XmlElement(name="messageUid",required=true)
-	private String messageUid;
-	
+	@XmlElement(name="messageDeliveryUid",required=true)
+	private String messageDeliveryUid;
+
 	@XmlElement(name="requiresPpmSearch",required=true)
 	private boolean requiresPpmSearch = false;
 
 	@XmlElement(name="getNewMessagesPatientMatchCriteria",required=false)
 	private GetNewMessagesPatientMatchCriteria patientMatchCriteria;
 
-	public String getMessageUid() {
-		return messageUid;
+	public String getMessageDeliveryUid() {
+		return messageDeliveryUid;
 	}
 
-	public void setMessageUid(String messageUid) {
-		this.messageUid = messageUid;
+	public void setMessageDeliveryUid(String messageDeliveryUid) {
+		this.messageDeliveryUid = messageDeliveryUid;
 	}
 
 	public boolean isRequiresPpmSearch() {
@@ -45,7 +47,6 @@ public class GetNewMessagesMessageInfo extends AbstractBean{
 	public void setPatientMatchCriteria(GetNewMessagesPatientMatchCriteria patientMatchCriteria) {
 		this.patientMatchCriteria = patientMatchCriteria;
 	}
-	
 	
 	
 }

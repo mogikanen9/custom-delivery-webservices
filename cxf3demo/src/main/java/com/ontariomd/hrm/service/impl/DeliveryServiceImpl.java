@@ -3,14 +3,14 @@ package com.ontariomd.hrm.service.impl;
 import javax.jws.WebService;
 
 import com.ontariomd.hrm.service.DeliveryService;
-import com.ontariomd.hrm.service.bean.DeclineMessagesMessageInfo;
-import com.ontariomd.hrm.service.bean.DeclineMessagesRequest;
-import com.ontariomd.hrm.service.bean.DeclineMessagesResponse;
-import com.ontariomd.hrm.service.bean.DownloadMessageRequest;
-import com.ontariomd.hrm.service.bean.DownloadMessageResponse;
-import com.ontariomd.hrm.service.bean.GetNewMessagesMessageInfo;
-import com.ontariomd.hrm.service.bean.GetNewMessagesRequest;
-import com.ontariomd.hrm.service.bean.GetNewMessagesResponse;
+import com.ontariomd.hrm.service.bean.delivery.DeclineMessagesMessageInfo;
+import com.ontariomd.hrm.service.bean.delivery.DeclineMessagesRequest;
+import com.ontariomd.hrm.service.bean.delivery.DeclineMessagesResponse;
+import com.ontariomd.hrm.service.bean.delivery.DownloadMessageRequest;
+import com.ontariomd.hrm.service.bean.delivery.DownloadMessageResponse;
+import com.ontariomd.hrm.service.bean.delivery.GetNewMessagesMessageInfo;
+import com.ontariomd.hrm.service.bean.delivery.GetNewMessagesRequest;
+import com.ontariomd.hrm.service.bean.delivery.GetNewMessagesResponse;
 
 @WebService(endpointInterface = "com.ontariomd.hrm.service.DeliveryService", portName = "DeliveryServicePort", serviceName = "DeliveryService")
 public class DeliveryServiceImpl implements DeliveryService {
@@ -22,7 +22,7 @@ public class DeliveryServiceImpl implements DeliveryService {
 
 		for (int i = 0; i < msgInfo.length; i++) {
 			msgInfo[i] = new GetNewMessagesMessageInfo();
-			msgInfo[i].setMessageUid("UID" + i);
+			msgInfo[i].setMessageDeliveryUid("UID" + i);
 		}
 
 		response.setMessages(msgInfo);

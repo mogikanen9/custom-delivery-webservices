@@ -1,4 +1,4 @@
-package com.ontariomd.hrm.service.bean;
+package com.ontariomd.hrm.service.bean.upload;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -6,11 +6,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement
-@XmlType(name = "GetNewMessagesPatientMatchCriteria")
-@XmlAccessorType(XmlAccessType.FIELD)
-public class GetNewMessagesPatientMatchCriteria extends AbstractBean {
+import com.ontariomd.hrm.service.bean.AbstractBean;
 
+@XmlRootElement
+@XmlType(name="UploadMessagePatientInfo")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class UploadMessagePatientInfo extends AbstractBean{
+	
 	private static final long serialVersionUID = 1L;
 
 	@XmlElement(name="hcNumber")
@@ -67,5 +69,6 @@ public class GetNewMessagesPatientMatchCriteria extends AbstractBean {
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-
+	
+	
 }
