@@ -3,27 +3,29 @@ package com.ontariomd.hrm.service.bean;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+@XmlRootElement
 @XmlType(name = "GetNewMessagesPatientMatchCriteria")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class GetNewMessagesPatientMatchCriteria extends AbstractBean {
 
 	private static final long serialVersionUID = 1L;
 
-	@XmlElement
+	@XmlElement(name="hcNumber")
 	private String hcNumber;
 	
-	@XmlElement
+	@XmlElement(name="hcProvince")
 	private String hcProvince;
 	
-	@XmlElement
+	@XmlElement(name="firstName")
 	private String firstName;
 	
-	@XmlElement
+	@XmlElement(name="lastName")
 	private String lastName;
 	
-	@XmlElement
+	@XmlElement(name="dob")
 	private String dob;
 
 	public String getHcNumber() {

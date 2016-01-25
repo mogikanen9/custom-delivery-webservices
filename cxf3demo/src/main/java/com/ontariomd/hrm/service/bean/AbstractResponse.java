@@ -3,7 +3,7 @@ package com.ontariomd.hrm.service.bean;
 import javax.xml.bind.annotation.XmlTransient;
 
 @XmlTransient
-public class AbstractResponse extends AbstractBean{
+public abstract class AbstractResponse extends AbstractBean{
 	
 	private static final long serialVersionUID = 1L;
 

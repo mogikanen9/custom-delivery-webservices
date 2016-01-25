@@ -92,8 +92,11 @@
 							<genWsdl>true</genWsdl>
 							<verbose>true</verbose>
 							<databinding>jaxb</databinding>
+							<frontend>jaxws</frontend>
 							<sop12>true</sop12>
 							<argline>-createxsdimports</argline>
+							<serviceName>DeliveryService</serviceName>
+							<attachWsdl>true</attachWsdl>
 						</configuration>
 					</execution>
 
