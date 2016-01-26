@@ -1,0 +1,99 @@
+<xs:schema xmlns:tns="http://schemas.ontariomd.com/hrm/delivery/type" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.ontariomd.com/hrm/delivery/type" version="1.0">
+
+  <xs:import namespace="http://www.w3.org/2005/05/xmlmime"/>
+  <xs:element name="declineMessagesMessageInfo" type="tns:DeclineMessagesMessageInfo"/>
+
+  <xs:element name="declineMessagesRequest" type="tns:DeclineMessagesRequest"/>
+
+  <xs:element name="declineMessagesResponse" type="tns:DeclineMessagesResponse"/>
+
+  <xs:element name="deliveryServiceFaultInfo" type="tns:DeliveryServiceFaultInfo"/>
+
+  <xs:element name="downloadMessageRequest" type="tns:DownloadMessageRequest"/>
+
+  <xs:element name="downloadMessageResponse" type="tns:DownloadMessageResponse"/>
+
+  <xs:element name="getNewMessagesMessageInfo" type="tns:GetNewMessagesMessageInfo"/>
+
+  <xs:element name="getNewMessagesPatientMatchCriteria" type="tns:GetNewMessagesPatientMatchCriteria"/>
+
+  <xs:element name="getNewMessagesRequest" type="tns:GetNewMessagesRequest"/>
+
+  <xs:element name="getNewMessagesResponse" type="tns:GetNewMessagesResponse"/>
+
+  <xs:complexType name="DownloadMessageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestTransactionUid" type="xs:string"/>
+      <xs:element name="messageDeliveryUid" type="xs:string" xmime:expectedContentTypes="application/octet-stream"/>
+      <xs:element name="emrSpecVersion" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DownloadMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="responseTransactionUid" type="xs:string"/>
+      <xs:element minOccurs="0" name="dataHandler" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DeliveryServiceFaultInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="faultString" type="xs:string"/>
+      <xs:element minOccurs="0" name="faultCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DeclineMessagesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestTransactionUid" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" name="messages" type="tns:DeclineMessagesMessageInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DeclineMessagesMessageInfo">
+    <xs:sequence>
+      <xs:element name="messageDeliveryUid" type="xs:string"/>
+      <xs:element name="status" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DeclineMessagesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="responseTransactionUid" type="xs:string"/>
+      <xs:element minOccurs="0" name="dataHandler" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetNewMessagesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestTransactionUid" type="xs:string"/>
+      <xs:element name="emrInstanceKey" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetNewMessagesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="responseTransactionUid" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" name="messages" type="tns:GetNewMessagesMessageInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetNewMessagesMessageInfo">
+    <xs:sequence>
+      <xs:element name="messageDeliveryUid" type="xs:string"/>
+      <xs:element name="requiresPpmSearch" type="xs:boolean"/>
+      <xs:element minOccurs="0" ref="tns:getNewMessagesPatientMatchCriteria"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetNewMessagesPatientMatchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="hcNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="hcProvince" type="xs:string"/>
+      <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+      <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+      <xs:element minOccurs="0" name="dob" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

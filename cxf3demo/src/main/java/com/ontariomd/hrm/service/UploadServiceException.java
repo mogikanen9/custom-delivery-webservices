@@ -4,7 +4,7 @@ import javax.xml.ws.WebFault;
 
 import com.ontariomd.hrm.service.bean.upload.UploadServiceFault;
 
-@WebFault(name = "DeliveryServiceException", targetNamespace = "http://schemas.ontariomd.com/hrm/UploadService")
+@WebFault(name = "UploadServiceException", targetNamespace = "http://schemas.ontariomd.com/hrm/delivery")
 public class UploadServiceException extends Exception{
 
 	private static final long serialVersionUID = 1L;

@@ -1,5 +1,5 @@
 @XmlSchema( 
-    namespace = "http://schemas.ontariomd.com/hrm/DeliveryService",    
+    namespace = "http://schemas.ontariomd.com/hrm/delivery/type",    
     elementFormDefault = XmlNsForm.QUALIFIED, 
     attributeFormDefault= XmlNsForm.QUALIFIED) 
 package com.ontariomd.hrm.service.bean.delivery;

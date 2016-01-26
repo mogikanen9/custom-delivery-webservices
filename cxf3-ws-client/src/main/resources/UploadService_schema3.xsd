@@ -1,0 +1,5 @@
+<xsd:schema xmlns="http://schemas.ontariomd.com/hrm/delivery/type" xmlns:ns0="http://schemas.ontariomd.com/hrm/upload/type" xmlns:tns="http://schemas.ontariomd.com/hrm/upload" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.ontariomd.com/hrm/delivery/type">
+  <xsd:import namespace="http://schemas.ontariomd.com/hrm/upload/type" schemaLocation="UploadService_schema1.xsd"/>
+  <xsd:element name="uploadMessageRequest" nillable="true" type="ns0:UploadMessageRequest"/>
+  <xsd:element name="uploadMessageResponse" nillable="true" type="ns0:UploadMessageResponse"/>
+</xsd:schema>

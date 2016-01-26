@@ -1,5 +1,5 @@
 @XmlSchema( 
-    namespace = "http://schemas.ontariomd.com/hrm/UploadService",    
+    namespace = "http://schemas.ontariomd.com/hrm/upload/type",    
     elementFormDefault = XmlNsForm.QUALIFIED, 
     attributeFormDefault= XmlNsForm.QUALIFIED) 
 package com.ontariomd.hrm.service.bean.upload;
