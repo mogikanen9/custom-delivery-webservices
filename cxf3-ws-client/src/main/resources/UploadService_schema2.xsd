@@ -1,4 +1,4 @@
-<xsd:schema xmlns:ns0="http://schemas.ontariomd.com/hrm/upload/type" xmlns:tns="http://schemas.ontariomd.com/hrm/delivery" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schemas.ontariomd.com/hrm/delivery">
+<xsd:schema xmlns:ns0="http://schemas.ontariomd.com/hrm/upload/type" xmlns:tns="http://schemas.ontariomd.com/hrm/upload" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schemas.ontariomd.com/hrm/upload">
   <xsd:import namespace="http://schemas.ontariomd.com/hrm/upload/type" schemaLocation="UploadService_schema1.xsd"/>
   <xsd:element name="UploadServiceException" type="tns:UploadServiceException"/>
   <xsd:complexType name="UploadServiceException">

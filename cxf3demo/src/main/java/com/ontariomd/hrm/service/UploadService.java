@@ -20,6 +20,6 @@ import com.ontariomd.hrm.service.bean.upload.UploadMessageResponse;
 public interface UploadService {
 
 	@WebMethod(operationName = "uploadMessage")
-	@WebResult(name="uploadMessageResponse", targetNamespace="http://schemas.ontariomd.com/hrm/delivery/type")
-	UploadMessageResponse uploadMessage(@WebParam(name = "uploadMessageRequest", targetNamespace="http://schemas.ontariomd.com/hrm/delivery/type", mode = Mode.IN) UploadMessageRequest request) throws UploadServiceException;
+	@WebResult(name="uploadMessageResponse", targetNamespace="http://schemas.ontariomd.com/hrm/upload/type")
+	UploadMessageResponse uploadMessage(@WebParam(name = "uploadMessageRequest", targetNamespace="http://schemas.ontariomd.com/hrm/upload/type", mode = Mode.IN) UploadMessageRequest request) throws UploadServiceException;
 }
