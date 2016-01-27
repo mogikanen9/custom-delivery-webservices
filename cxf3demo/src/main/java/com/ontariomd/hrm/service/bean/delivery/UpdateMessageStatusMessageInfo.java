@@ -10,8 +10,8 @@ import com.ontariomd.hrm.service.bean.AbstractBean;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DeclineMessagesMessageInfo")
-public class DeclineMessagesMessageInfo extends AbstractBean {
+@XmlType(name = "UpdateMessageStatusMessageInfo")
+public class UpdateMessageStatusMessageInfo extends AbstractBean {
 
 	private static final long serialVersionUID = 1L;
 
@@ -19,7 +19,10 @@ public class DeclineMessagesMessageInfo extends AbstractBean {
 	private String messageDeliveryUid;
 
 	@XmlElement(name = "status", required = true)
-	private String status;
+	private MessageStatus status;
+
+	@XmlElement(name = "reason", required = false)
+	private MessageStatusReason reason;
 
 	public String getMessageDeliveryUid() {
 		return messageDeliveryUid;
@@ -29,11 +32,20 @@ public class DeclineMessagesMessageInfo extends AbstractBean {
 		this.messageDeliveryUid = messageDeliveryUid;
 	}
 
-	public String getStatus() {
+	public MessageStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(MessageStatus status) {
 		this.status = status;
 	}
+
+	public MessageStatusReason getReason() {
+		return reason;
+	}
+
+	public void setReason(MessageStatusReason reason) {
+		this.reason = reason;
+	}
+
 }

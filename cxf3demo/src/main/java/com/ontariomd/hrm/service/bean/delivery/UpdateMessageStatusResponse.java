@@ -10,8 +10,8 @@ import com.ontariomd.hrm.service.bean.AbstractResponse;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name="DeclineMessagesResponse")
-public class DeclineMessagesResponse extends AbstractResponse{
+@XmlType(name="UpdateMessageStatusResponse")
+public class UpdateMessageStatusResponse extends AbstractResponse{
 	
 	private static final long serialVersionUID = 1L;
 

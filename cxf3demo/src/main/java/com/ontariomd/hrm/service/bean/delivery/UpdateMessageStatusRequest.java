@@ -10,19 +10,19 @@ import com.ontariomd.hrm.service.bean.AbstractRequest;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name="DeclineMessagesRequest")
-public class DeclineMessagesRequest extends AbstractRequest{
+@XmlType(name="UpdateMessageStatusRequest")
+public class UpdateMessageStatusRequest extends AbstractRequest{
 
 	private static final long serialVersionUID = 1L;
 
 	@XmlElement(name="messages",required=true)
-	private DeclineMessagesMessageInfo[] messages;
+	private UpdateMessageStatusMessageInfo[] messages;
 
-	public DeclineMessagesMessageInfo[] getMessages() {
+	public UpdateMessageStatusMessageInfo[] getMessages() {
 		return messages;
 	}
 
-	public void setMessages(DeclineMessagesMessageInfo[] messages) {
+	public void setMessages(UpdateMessageStatusMessageInfo[] messages) {
 		this.messages = messages;
 	}
 

@@ -3,14 +3,14 @@ package com.ontariomd.hrm.service.impl;
 import javax.jws.WebService;
 
 import com.ontariomd.hrm.service.DeliveryService;
-import com.ontariomd.hrm.service.bean.delivery.DeclineMessagesMessageInfo;
-import com.ontariomd.hrm.service.bean.delivery.DeclineMessagesRequest;
-import com.ontariomd.hrm.service.bean.delivery.DeclineMessagesResponse;
+import com.ontariomd.hrm.service.DeliveryServiceException;
 import com.ontariomd.hrm.service.bean.delivery.DownloadMessageRequest;
 import com.ontariomd.hrm.service.bean.delivery.DownloadMessageResponse;
 import com.ontariomd.hrm.service.bean.delivery.GetNewMessagesMessageInfo;
 import com.ontariomd.hrm.service.bean.delivery.GetNewMessagesRequest;
 import com.ontariomd.hrm.service.bean.delivery.GetNewMessagesResponse;
+import com.ontariomd.hrm.service.bean.delivery.UpdateMessageStatusRequest;
+import com.ontariomd.hrm.service.bean.delivery.UpdateMessageStatusResponse;
 
 @WebService(endpointInterface = "com.ontariomd.hrm.service.DeliveryService", portName = "DeliveryServicePort", serviceName = "DeliveryService")
 public class DeliveryServiceImpl implements DeliveryService {
@@ -30,19 +30,13 @@ public class DeliveryServiceImpl implements DeliveryService {
 		return response;
 	}
 
-	public DeclineMessagesResponse declineMessages(DeclineMessagesRequest request) {
-		DeclineMessagesResponse response = new DeclineMessagesResponse();
-
-		if (request.getMessages() != null) {
-			for (DeclineMessagesMessageInfo message : request.getMessages()) {
-				// do smth
-			}
-		}
-
-		return response;
+	public DownloadMessageResponse downloadMessage(DownloadMessageRequest request) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	public DownloadMessageResponse downloadMessage(DownloadMessageRequest request) {
+	public UpdateMessageStatusResponse updateMessageStatus(UpdateMessageStatusRequest request)
+			throws DeliveryServiceException {
 		// TODO Auto-generated method stub
 		return null;
 	}

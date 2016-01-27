@@ -11,8 +11,8 @@ import javax.jws.soap.SOAPBinding.Style;
 import javax.jws.soap.SOAPBinding.Use;
 import javax.xml.ws.BindingType;
 
-import com.ontariomd.hrm.service.bean.delivery.DeclineMessagesRequest;
-import com.ontariomd.hrm.service.bean.delivery.DeclineMessagesResponse;
+import com.ontariomd.hrm.service.bean.delivery.UpdateMessageStatusRequest;
+import com.ontariomd.hrm.service.bean.delivery.UpdateMessageStatusResponse;
 import com.ontariomd.hrm.service.bean.delivery.DownloadMessageRequest;
 import com.ontariomd.hrm.service.bean.delivery.DownloadMessageResponse;
 import com.ontariomd.hrm.service.bean.delivery.GetNewMessagesRequest;
@@ -28,10 +28,10 @@ public interface DeliveryService {
 	GetNewMessagesResponse getNewMessages(
 			@WebParam(name = "getNewMessagesRequest", targetNamespace="http://schemas.ontariomd.com/hrm/delivery/type", mode = Mode.IN) GetNewMessagesRequest request) throws DeliveryServiceException;
 
-	@WebMethod(operationName = "declineMessages", action="declineMessages")
-	@WebResult(name="declineMessagesResponse", targetNamespace="http://schemas.ontariomd.com/hrm/delivery/type")
-	DeclineMessagesResponse declineMessages(
-			@WebParam(name = "declineMessagesRequest", targetNamespace="http://schemas.ontariomd.com/hrm/delivery/type", mode = Mode.IN) DeclineMessagesRequest request) throws DeliveryServiceException;
+	@WebMethod(operationName = "updateMessageStatus", action="updateMessageStatus")
+	@WebResult(name="updateMessageStatusResponse", targetNamespace="http://schemas.ontariomd.com/hrm/delivery/type")
+	UpdateMessageStatusResponse updateMessageStatus(
+			@WebParam(name = "updateMessageStatusRequest", targetNamespace="http://schemas.ontariomd.com/hrm/delivery/type", mode = Mode.IN) UpdateMessageStatusRequest request) throws DeliveryServiceException;
 
 	@WebMethod(operationName = "downloadMessage", action="downloadMessage")
 	@WebResult(name="downloadMessageResponse", targetNamespace="http://schemas.ontariomd.com/hrm/delivery/type")
