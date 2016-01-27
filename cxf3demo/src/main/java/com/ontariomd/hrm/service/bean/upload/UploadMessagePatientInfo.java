@@ -1,9 +1,12 @@
 package com.ontariomd.hrm.service.bean.upload;
 
+import java.util.Calendar;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 import com.ontariomd.hrm.service.bean.AbstractBean;
@@ -28,7 +31,8 @@ public class UploadMessagePatientInfo extends AbstractBean{
 	private String lastName;
 	
 	@XmlElement(name="dob")
-	private String dob;
+	@XmlSchemaType(name="date")
+	private Calendar dob;
 
 	public String getHcNumber() {
 		return hcNumber;
@@ -62,11 +66,11 @@ public class UploadMessagePatientInfo extends AbstractBean{
 		this.lastName = lastName;
 	}
 
-	public String getDob() {
+	public Calendar getDob() {
 		return dob;
 	}
 
-	public void setDob(String dob) {
+	public void setDob(Calendar dob) {
 		this.dob = dob;
 	}
 	
