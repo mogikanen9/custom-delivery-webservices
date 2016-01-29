@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:soap="http://cxf.apache.org/bindings/soap" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
-    <jaxws:server id="jaxwsService" serviceClass="com.ontariomd.hrm.service.DeliveryService" address="/deliveryService">
+	<!-- DeliveryService -->
+    <jaxws:server id="jaxwsDeliveryService" serviceClass="com.ontariomd.hrm.service.DeliveryService" address="/deliveryService">
         <jaxws:serviceBean>
-            <bean class="com.ontariomd.hrm.service.impl.DeliveryServiceImpl"/>
+            <bean class="com.ontariomd.hrm.service.impl.DeliveryServiceImpl"/>            
         </jaxws:serviceBean>
+        <jaxws:features>
+        	 <bean class="org.apache.cxf.feature.LoggingFeature">
+        	 	<property name="prettyLogging">
+        	 		<value>true</value>
+        	 	</property>
+        	 </bean>        	 	         	 
+        </jaxws:features>  
+        <jaxws:inInterceptors>
+        	 <bean
+            class="org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor">
+            <constructor-arg>
+               <map>
+                  <entry key="action" value="UsernameToken"/>
+                  <entry key="passwordType" value="PasswordDigest"/>
+                  <entry key="passwordCallbackRef" value-ref="myPasswordCallback"/>
+               </map>
+            </constructor-arg>
+         </bean>
+        </jaxws:inInterceptors>      
     </jaxws:server>
+    
+    <!-- UploadService -->
+    <jaxws:server id="jaxwsUploadService" serviceClass="com.ontariomd.hrm.service.UploadService" address="/uploadService">
+        <jaxws:serviceBean>
+            <bean class="com.ontariomd.hrm.service.impl.UploadServiceImpl"/>            
+        </jaxws:serviceBean>        
+    </jaxws:server>
+    
+    <bean id="myPasswordCallback" class="com.ontariomd.hrm.service.handler.ServerPasswordCallback" />
 </beans>

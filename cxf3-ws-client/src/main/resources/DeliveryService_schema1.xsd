@@ -1,0 +1,121 @@
+<xs:schema xmlns:tns="http://schemas.ontariomd.com/hrm/delivery/type" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.ontariomd.com/hrm/delivery/type" version="1.0">
+
+  <xs:import namespace="http://www.w3.org/2005/05/xmlmime"/>
+  <xs:element name="deliveryServiceFaultInfo" type="tns:DeliveryServiceFaultInfo"/>
+
+  <xs:element name="downloadMessageRequest" type="tns:DownloadMessageRequest"/>
+
+  <xs:element name="downloadMessageResponse" type="tns:DownloadMessageResponse"/>
+
+  <xs:element name="getNewMessagesMessageInfo" type="tns:GetNewMessagesMessageInfo"/>
+
+  <xs:element name="getNewMessagesPatientMatchCriteria" type="tns:GetNewMessagesPatientMatchCriteria"/>
+
+  <xs:element name="getNewMessagesRequest" type="tns:GetNewMessagesRequest"/>
+
+  <xs:element name="getNewMessagesResponse" type="tns:GetNewMessagesResponse"/>
+
+  <xs:element name="messageStatus" type="tns:MessageStatus"/>
+
+  <xs:element name="messageStatusReason" type="tns:MessageStatusReason"/>
+
+  <xs:element name="updateMessageStatusMessageInfo" type="tns:UpdateMessageStatusMessageInfo"/>
+
+  <xs:element name="updateMessageStatusRequest" type="tns:UpdateMessageStatusRequest"/>
+
+  <xs:element name="updateMessageStatusResponse" type="tns:UpdateMessageStatusResponse"/>
+
+  <xs:complexType name="DownloadMessageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestTransactionUid" type="xs:string"/>
+      <xs:element name="messageDeliveryUid" type="xs:string" xmime:expectedContentTypes="application/octet-stream"/>
+      <xs:element name="emrSpecVersion" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DownloadMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="responseTransactionUid" type="xs:string"/>
+      <xs:element minOccurs="0" name="dataHandler" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DeliveryServiceFaultInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="faultString" type="xs:string"/>
+      <xs:element minOccurs="0" name="faultCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetNewMessagesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestTransactionUid" type="xs:string"/>
+      <xs:element name="emrInstanceKey" type="xs:string"/>
+      <xs:element minOccurs="0" name="from" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="to" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetNewMessagesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="responseTransactionUid" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" name="messages" type="tns:GetNewMessagesMessageInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetNewMessagesMessageInfo">
+    <xs:sequence>
+      <xs:element name="messageDeliveryUid" type="xs:string"/>
+      <xs:element name="requiresPpmSearch" type="xs:boolean"/>
+      <xs:element minOccurs="0" ref="tns:getNewMessagesPatientMatchCriteria"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetNewMessagesPatientMatchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="hcNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="hcProvince" type="xs:string"/>
+      <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+      <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+      <xs:element minOccurs="0" name="dob" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UpdateMessageStatusRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestTransactionUid" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" name="messages" type="tns:UpdateMessageStatusMessageInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UpdateMessageStatusMessageInfo">
+    <xs:sequence>
+      <xs:element name="messageDeliveryUid" type="xs:string"/>
+      <xs:element name="status" type="tns:MessageStatus"/>
+      <xs:element minOccurs="0" name="reason" type="tns:MessageStatusReason"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UpdateMessageStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="responseTransactionUid" type="xs:string"/>
+      <xs:element minOccurs="0" name="dataHandler" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="MessageStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DELIVERED"/>
+      <xs:enumeration value="REJECTED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="MessageStatusReason">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PATIENT_NOT_FOUND"/>
+      <xs:enumeration value="MESSAGE_PARSING_ERROR"/>
+      <xs:enumeration value="MESSAGE_DOWNLOAD_ERROR"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

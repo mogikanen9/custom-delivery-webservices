@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="DeliveryService" targetNamespace="http://schemas.ontariomd.com/hrm/delivery" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.ontariomd.com/hrm/delivery" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://schemas.ontariomd.com/hrm/delivery/type">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://schemas.ontariomd.com/hrm/delivery/type" schemaLocation="DeliveryService_schema1.xsd"/>
+  <import namespace="http://schemas.ontariomd.com/hrm/delivery" schemaLocation="DeliveryService_schema2.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="downloadMessage">
+    <wsdl:part name="downloadMessageRequest" element="ns1:downloadMessageRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="downloadMessageResponse">
+    <wsdl:part name="downloadMessageResponse" element="ns1:downloadMessageResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeliveryServiceException">
+    <wsdl:part name="DeliveryServiceException" element="tns:DeliveryServiceException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNewMessagesResponse">
+    <wsdl:part name="getNewMessagesResponse" element="ns1:getNewMessagesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNewMessages">
+    <wsdl:part name="getNewMessagesRequest" element="ns1:getNewMessagesRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateMessageStatus">
+    <wsdl:part name="updateMessageStatusRequest" element="ns1:updateMessageStatusRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateMessageStatusResponse">
+    <wsdl:part name="updateMessageStatusResponse" element="ns1:updateMessageStatusResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DeliveryService">
+    <wsdl:operation name="downloadMessage">
+      <wsdl:input name="downloadMessage" message="tns:downloadMessage">
+    </wsdl:input>
+      <wsdl:output name="downloadMessageResponse" message="tns:downloadMessageResponse">
+    </wsdl:output>
+      <wsdl:fault name="DeliveryServiceException" message="tns:DeliveryServiceException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getNewMessages">
+      <wsdl:input name="getNewMessages" message="tns:getNewMessages">
+    </wsdl:input>
+      <wsdl:output name="getNewMessagesResponse" message="tns:getNewMessagesResponse">
+    </wsdl:output>
+      <wsdl:fault name="DeliveryServiceException" message="tns:DeliveryServiceException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateMessageStatus">
+      <wsdl:input name="updateMessageStatus" message="tns:updateMessageStatus">
+    </wsdl:input>
+      <wsdl:output name="updateMessageStatusResponse" message="tns:updateMessageStatusResponse">
+    </wsdl:output>
+      <wsdl:fault name="DeliveryServiceException" message="tns:DeliveryServiceException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DeliveryServiceServiceSoapBinding" type="tns:DeliveryService">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="downloadMessage">
+      <soap12:operation soapAction="downloadMessage" style="document"/>
+      <wsdl:input name="downloadMessage">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="downloadMessageResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DeliveryServiceException">
+        <soap12:fault name="DeliveryServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getNewMessages">
+      <soap12:operation soapAction="getNewMessages" style="document"/>
+      <wsdl:input name="getNewMessages">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNewMessagesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DeliveryServiceException">
+        <soap12:fault name="DeliveryServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateMessageStatus">
+      <soap12:operation soapAction="updateMessageStatus" style="document"/>
+      <wsdl:input name="updateMessageStatus">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateMessageStatusResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DeliveryServiceException">
+        <soap12:fault name="DeliveryServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DeliveryService">
+    <wsdl:port name="DeliveryServicePort" binding="tns:DeliveryServiceServiceSoapBinding">
+      <soap12:address location="http://localhost:9090/DeliveryServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

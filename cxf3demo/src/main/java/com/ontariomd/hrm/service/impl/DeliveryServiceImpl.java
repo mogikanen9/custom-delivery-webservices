@@ -16,6 +16,9 @@ import com.ontariomd.hrm.service.bean.delivery.UpdateMessageStatusResponse;
 public class DeliveryServiceImpl implements DeliveryService {
 
 	public GetNewMessagesResponse getNewMessages(GetNewMessagesRequest request) {
+		
+		System.out.println("GetNewMessagesResponse...");
+		
 		GetNewMessagesResponse response = new GetNewMessagesResponse();
 
 		GetNewMessagesMessageInfo[] msgInfo = new GetNewMessagesMessageInfo[10];
