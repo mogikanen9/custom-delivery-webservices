@@ -1,6 +1,5 @@
-<xs:schema xmlns:tns="http://schemas.ontariomd.com/hrm/delivery/type" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.ontariomd.com/hrm/delivery/type" version="1.0">
+<xs:schema xmlns:tns="http://schemas.ontariomd.com/hrm/delivery/type" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.ontariomd.com/hrm/delivery/type" version="1.0">
 
-  <xs:import namespace="http://www.w3.org/2005/05/xmlmime"/>
   <xs:element name="deliveryServiceFaultInfo" type="tns:DeliveryServiceFaultInfo"/>
 
   <xs:element name="downloadMessageRequest" type="tns:DownloadMessageRequest"/>
@@ -28,7 +27,7 @@
   <xs:complexType name="DownloadMessageRequest">
     <xs:sequence>
       <xs:element minOccurs="0" name="requestTransactionUid" type="xs:string"/>
-      <xs:element name="messageDeliveryUid" type="xs:string" xmime:expectedContentTypes="application/octet-stream"/>
+      <xs:element name="messageDeliveryUid" type="xs:string"/>
       <xs:element name="emrSpecVersion" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>

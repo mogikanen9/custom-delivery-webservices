@@ -16,7 +16,6 @@ public class DownloadMessageRequest extends AbstractRequest {
 
 	private static final long serialVersionUID = 1L;
 
-	@XmlMimeType("application/octet-stream")
 	@XmlElement(name = "messageDeliveryUid", required = true)
 	private String messageDeliveryUid;
 

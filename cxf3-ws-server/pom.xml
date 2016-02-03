@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.vlad</groupId>
-	<artifactId>cxf3-ws-client</artifactId>
+	<artifactId>cxf3-ws-server</artifactId>
 	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cxf3-ws-client Maven app</name>
+	<name>cxf3-ws-server Maven app</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -58,10 +58,9 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>cxf3-ws-client</finalName>
+		<finalName>cxf3-ws-server</finalName>
 
 		<plugins>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -71,6 +70,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+
 
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
@@ -88,9 +88,12 @@
 									<wsdl>${basedir}/src/main/resources/DeliveryService.wsdl</wsdl>
 									<extraargs>
 										<!--extraarg>-autoNameResolution</extraarg -->
+										<extraarg>-server</extraarg>
+										<extraarg>-impl</extraarg>
 									</extraargs>
 								</wsdlOption>
 							</wsdlOptions>
+
 						</configuration>
 						<goals>
 							<goal>wsdl2java</goal>
@@ -108,6 +111,8 @@
 									<wsdl>${basedir}/src/main/resources/UploadService.wsdl</wsdl>
 									<extraargs>
 										<!-- extraarg>-autoNameResolution</extraarg -->
+										<extraarg>-server</extraarg>
+										<extraarg>-impl</extraarg>
 									</extraargs>
 								</wsdlOption>
 							</wsdlOptions>
