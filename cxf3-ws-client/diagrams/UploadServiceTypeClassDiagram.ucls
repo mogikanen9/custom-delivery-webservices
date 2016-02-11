@@ -6,7 +6,7 @@
     file="/cxf3-ws-client/target/generated/cxf/com/ontariomd/schemas/hrm/upload/type/UploadMessageMessageInfo.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="171" width="249" x="41" y="302"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -17,7 +17,7 @@
     file="/cxf3-ws-client/target/generated/cxf/com/ontariomd/schemas/hrm/upload/type/UploadMessagePatientInfo.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="351" width="184" x="41" y="513"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -28,7 +28,7 @@
     file="/cxf3-ws-client/target/generated/cxf/com/ontariomd/schemas/hrm/upload/type/UploadMessageRequest.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="225" width="273" x="41" y="37"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -39,7 +39,7 @@
     file="/cxf3-ws-client/target/generated/cxf/com/ontariomd/schemas/hrm/upload/type/UploadMessageResponse.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="135" width="221" x="354" y="37"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
