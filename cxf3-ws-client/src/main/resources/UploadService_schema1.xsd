@@ -1,0 +1,88 @@
+<xs:schema xmlns:tns="http://schemas.ontariomd.com/hrm/upload/type" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.ontariomd.com/hrm/upload/type" version="1.0">
+
+  <xs:import namespace="http://www.w3.org/2005/05/xmlmime"/>
+  <xs:element name="messageType" type="tns:MessageType"/>
+
+  <xs:element name="recipientIdentityType" type="tns:RecipientIdentityType"/>
+
+  <xs:element name="uploadMessageMessageInfo" type="tns:UploadMessageMessageInfo"/>
+
+  <xs:element name="uploadMessagePatientInfo" type="tns:UploadMessagePatientInfo"/>
+
+  <xs:element name="uploadMessageRecipientInfo" type="tns:UploadMessageRecipientInfo"/>
+
+  <xs:element name="uploadMessageRequest" type="tns:UploadMessageRequest"/>
+
+  <xs:element name="uploadMessageResponse" type="tns:UploadMessageResponse"/>
+
+  <xs:element name="uploadServiceFault" type="tns:UploadServiceFault"/>
+
+  <xs:complexType name="UploadMessageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestTransactionUid" type="xs:string"/>
+      <xs:element name="messageInfo" type="tns:UploadMessageMessageInfo"/>
+      <xs:element maxOccurs="unbounded" name="recipients" type="tns:UploadMessageRecipientInfo"/>
+      <xs:element name="messageContent" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UploadMessageMessageInfo">
+    <xs:sequence>
+      <xs:element name="patientInfo" type="tns:UploadMessagePatientInfo"/>
+      <xs:element name="msgType" type="tns:MessageType"/>
+      <xs:element name="msgUid" type="xs:string"/>
+      <xs:element name="sendingFacilityId" type="xs:string"/>
+      <xs:element name="messageReceivedDate" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UploadMessagePatientInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="hcNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="hcProvince" type="xs:string"/>
+      <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+      <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+      <xs:element minOccurs="0" name="dob" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UploadMessageRecipientInfo">
+    <xs:sequence>
+      <xs:element name="identityType" type="tns:RecipientIdentityType"/>
+      <xs:element name="identityValue" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UploadMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="responseTransactionUid" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UploadServiceFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="faultString" type="xs:string"/>
+      <xs:element minOccurs="0" name="faultCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="MessageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MR"/>
+      <xs:enumeration value="DI"/>
+      <xs:enumeration value="CRT"/>
+      <xs:enumeration value="BBK"/>
+      <xs:enumeration value="PTH"/>
+      <xs:enumeration value="LAB"/>
+      <xs:enumeration value="MC"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="RecipientIdentityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CPSO"/>
+      <xs:enumeration value="CNO"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
