@@ -2,6 +2,9 @@ package com.ontariomd.hrm.service.impl;
 
 import javax.jws.WebService;
 
+import org.apache.cxf.annotations.SchemaValidation;
+import org.apache.cxf.annotations.SchemaValidation.SchemaValidationType;
+
 import com.ontariomd.hrm.service.UploadService;
 import com.ontariomd.hrm.service.bean.upload.UploadMessageRequest;
 import com.ontariomd.hrm.service.bean.upload.UploadMessageResponse;
@@ -10,8 +13,11 @@ import com.ontariomd.hrm.service.bean.upload.UploadMessageResponse;
 public class UploadServiceImpl implements UploadService {
 
 	public UploadMessageResponse uploadMessage(UploadMessageRequest request) {
-		// TODO Auto-generated method stub
-		return null;
+		UploadMessageResponse response = new UploadMessageResponse();
+		
+		response.setResponseTransactionUid("UPL-"+System.currentTimeMillis());
+		
+		return response;
 	}
 
 }

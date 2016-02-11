@@ -2,6 +2,9 @@ package com.ontariomd.hrm.service.impl;
 
 import javax.jws.WebService;
 
+import org.apache.cxf.annotations.SchemaValidation;
+import org.apache.cxf.annotations.SchemaValidation.SchemaValidationType;
+
 import com.ontariomd.hrm.service.DeliveryService;
 import com.ontariomd.hrm.service.DeliveryServiceException;
 import com.ontariomd.hrm.service.bean.delivery.DownloadMessageRequest;

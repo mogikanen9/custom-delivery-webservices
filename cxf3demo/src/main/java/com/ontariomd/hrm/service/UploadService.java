@@ -11,12 +11,16 @@ import javax.jws.soap.SOAPBinding.Style;
 import javax.jws.soap.SOAPBinding.Use;
 import javax.xml.ws.BindingType;
 
+import org.apache.cxf.annotations.SchemaValidation;
+import org.apache.cxf.annotations.SchemaValidation.SchemaValidationType;
+
 import com.ontariomd.hrm.service.bean.upload.UploadMessageRequest;
 import com.ontariomd.hrm.service.bean.upload.UploadMessageResponse;
 
 @WebService(targetNamespace = "http://schemas.ontariomd.com/hrm/upload")
 @SOAPBinding(style = Style.DOCUMENT, use = Use.LITERAL, parameterStyle = ParameterStyle.BARE)
 @BindingType(javax.xml.ws.soap.SOAPBinding.SOAP12HTTP_BINDING)
+@SchemaValidation(type = SchemaValidationType.BOTH)
 public interface UploadService {
 
 	@WebMethod(operationName = "uploadMessage")

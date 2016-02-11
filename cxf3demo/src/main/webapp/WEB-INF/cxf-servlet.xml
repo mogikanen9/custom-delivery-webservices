@@ -30,7 +30,14 @@
     <jaxws:server id="jaxwsUploadService" serviceClass="com.ontariomd.hrm.service.UploadService" address="/uploadService">
         <jaxws:serviceBean>
             <bean class="com.ontariomd.hrm.service.impl.UploadServiceImpl"/>            
-        </jaxws:serviceBean>        
+        </jaxws:serviceBean>
+         <jaxws:features>
+        	 <bean class="org.apache.cxf.feature.LoggingFeature">
+        	 	<property name="prettyLogging">
+        	 		<value>true</value>
+        	 	</property>
+        	 </bean>        	 	         	 
+        </jaxws:features>          
     </jaxws:server>
     
     <bean id="myPasswordCallback" class="com.ontariomd.hrm.service.handler.ServerPasswordCallback" />

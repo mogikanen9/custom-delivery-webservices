@@ -11,6 +11,9 @@ import javax.jws.soap.SOAPBinding.Style;
 import javax.jws.soap.SOAPBinding.Use;
 import javax.xml.ws.BindingType;
 
+import org.apache.cxf.annotations.SchemaValidation;
+import org.apache.cxf.annotations.SchemaValidation.SchemaValidationType;
+
 import com.ontariomd.hrm.service.bean.delivery.UpdateMessageStatusRequest;
 import com.ontariomd.hrm.service.bean.delivery.UpdateMessageStatusResponse;
 import com.ontariomd.hrm.service.bean.delivery.DownloadMessageRequest;
@@ -21,6 +24,7 @@ import com.ontariomd.hrm.service.bean.delivery.GetNewMessagesResponse;
 @WebService(targetNamespace = "http://schemas.ontariomd.com/hrm/delivery")
 @SOAPBinding(style = Style.DOCUMENT, use = Use.LITERAL, parameterStyle = ParameterStyle.BARE)
 @BindingType(javax.xml.ws.soap.SOAPBinding.SOAP12HTTP_BINDING)
+@SchemaValidation(type = SchemaValidationType.BOTH)
 public interface DeliveryService {
 
 	@WebMethod(operationName = "getNewMessages", action="getNewMessages")

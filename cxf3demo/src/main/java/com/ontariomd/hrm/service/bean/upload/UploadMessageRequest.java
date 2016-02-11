@@ -19,7 +19,7 @@ public class UploadMessageRequest extends AbstractRequest {
 
 	@XmlElement(name = "messageInfo", required = true)
 	private UploadMessageMessageInfo messageInfo;
-
+	
 	@XmlElement(name = "recipients", required = true)
 	private UploadMessageRecipientInfo[] recipients;
 
