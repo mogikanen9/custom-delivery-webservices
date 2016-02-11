@@ -3,7 +3,6 @@ package com.vlad.test;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.xml.namespace.QName;
@@ -24,10 +23,6 @@ import com.ontariomd.schemas.hrm.delivery.DeliveryService_Service;
 import com.ontariomd.schemas.hrm.delivery.type.GetNewMessagesMessageInfo;
 import com.ontariomd.schemas.hrm.delivery.type.GetNewMessagesRequest;
 import com.ontariomd.schemas.hrm.delivery.type.GetNewMessagesResponse;
-
-import javax.xml.ws.handler.Handler;
-import javax.xml.ws.Binding;
-import javax.xml.ws.BindingProvider;
 
 public class SimpleWSClientMainRun {
 
