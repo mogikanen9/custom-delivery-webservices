@@ -18,12 +18,23 @@ public class GetNewMessagesMessageInfo extends AbstractBean{
 	@XmlElement(name="messageDeliveryUid",required=true)
 	private String messageDeliveryUid;
 
+	@XmlElement(name="recipients",required=true)
+	private GetNewMessagesRecipientInfo[] recipients = null;		
+
 	@XmlElement(name="requiresPpmSearch",required=true)
 	private boolean requiresPpmSearch = false;
 
 	@XmlElement(name="getNewMessagesPatientMatchCriteria",required=false)
 	private GetNewMessagesPatientMatchCriteria patientMatchCriteria;
 
+	public GetNewMessagesRecipientInfo[] getRecipients() {
+		return recipients;
+	}
+
+	public void setRecipients(GetNewMessagesRecipientInfo[] recipients) {
+		this.recipients = recipients;
+	}
+	
 	public String getMessageDeliveryUid() {
 		return messageDeliveryUid;
 	}

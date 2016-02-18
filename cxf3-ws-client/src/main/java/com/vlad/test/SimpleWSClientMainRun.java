@@ -18,15 +18,15 @@ import org.apache.wss4j.dom.WSConstants;
 import org.apache.wss4j.dom.handler.WSHandlerConstants;
 
 import com.ontariomd.schemas.hrm.delivery.DeliveryService;
-import com.ontariomd.schemas.hrm.delivery.DeliveryServiceException_Exception;
 import com.ontariomd.schemas.hrm.delivery.DeliveryService_Service;
+import com.ontariomd.schemas.hrm.delivery.DeliveryServiceException;
 import com.ontariomd.schemas.hrm.delivery.type.GetNewMessagesMessageInfo;
 import com.ontariomd.schemas.hrm.delivery.type.GetNewMessagesRequest;
 import com.ontariomd.schemas.hrm.delivery.type.GetNewMessagesResponse;
 
 public class SimpleWSClientMainRun {
 
-	 public final static QName SERVICE = new QName("http://schemas.ontariomd.com/hrm/delivery", "DeliveryServiceService");
+	 public final static QName SERVICE = new QName("http://schemas.ontariomd.com/hrm/delivery", "DeliveryService");
 	private static final String DELIVERY_SERVICE_URL = "http://localhost:8180/cxf3demo/services/deliveryService?wsdl";
 
 	
@@ -68,13 +68,13 @@ public class SimpleWSClientMainRun {
 			GetNewMessagesResponse response = service.getNewMessages(request);
 
 			for(GetNewMessagesMessageInfo msgInfo:response.getMessages()){
-				System.out.println(msgInfo.getMessageDeliveryUid());
+				System.out.println("MSGUID->"+msgInfo.getMessageDeliveryUid()+", recipient-> "+msgInfo.getRecipients().get(0).getIdentityValue());
 			}
 			
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (DeliveryServiceException_Exception e) {
+		} catch (DeliveryServiceException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}  

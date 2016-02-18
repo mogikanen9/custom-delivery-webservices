@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:soap="http://cxf.apache.org/bindings/soap" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:jaxws="http://cxf.apache.org/jaxws" 
+		xmlns:soap="http://cxf.apache.org/bindings/soap" 
+		xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	<!-- DeliveryService -->
-    <jaxws:server id="jaxwsDeliveryService" serviceClass="com.ontariomd.hrm.service.DeliveryService" address="/deliveryService">
+	<jaxws:endpoint id="jaxwsDeliveryService" implementor="com.ontariomd.hrm.service.impl.DeliveryServiceImpl"
+		address="/deliveryService" publish="true" wsdlLocation="WEB-INF/wsdl/DeliveryService.wsdl">
+		<jaxws:properties>
+			<entry key="mtom-enabled" value="true" />			
+			<entry key="schema-validation-enabled" value="true" />			
+		</jaxws:properties>
+		<jaxws:features>
+				<bean class="org.apache.cxf.feature.LoggingFeature">
+        	 	<property name="prettyLogging">
+        	 		<value>true</value>
+        	 	</property>
+        	 </bean>        
+		</jaxws:features>
+	</jaxws:endpoint>  
+    
+    <!-- UploadService -->    
+    <jaxws:endpoint id="jaxwsUploadService" implementor="com.ontariomd.hrm.service.impl.UploadServiceImpl"
+		address="/uploadService" publish="true" wsdlLocation="WEB-INF/wsdl/UploadService.wsdl">
+		<jaxws:properties>
+			<entry key="mtom-enabled" value="true" />			
+			<entry key="schema-validation-enabled" value="true" />			
+		</jaxws:properties>
+		<jaxws:features>
+				<bean class="org.apache.cxf.feature.LoggingFeature">
+        	 	<property name="prettyLogging">
+        	 		<value>true</value>
+        	 	</property>
+        	 </bean>        
+		</jaxws:features>
+	</jaxws:endpoint>
+    
+      <!-- jaxws:server id="jaxwsDeliveryService" serviceClass="com.ontariomd.hrm.service.DeliveryService" 
+    address="/deliveryService" wsdlLocation="WEB-INF/wsdl/DeliveryService.wsdl">
         <jaxws:serviceBean>
             <bean class="com.ontariomd.hrm.service.impl.DeliveryServiceImpl"/>            
         </jaxws:serviceBean>
@@ -24,12 +60,12 @@
             </constructor-arg>
          </bean>
         </jaxws:inInterceptors>      
-    </jaxws:server>
+    </jaxws:server-->
     
-    <!-- UploadService -->
-    <jaxws:server id="jaxwsUploadService" serviceClass="com.ontariomd.hrm.service.UploadService" address="/uploadService">
+    <!-- jaxws:server id="jaxwsUploadService" serviceClass="com.ontariomd.hrm.service.UploadService" address="/uploadService" 
+    		 wsdlLocation="WEB-INF/wsdl/UploadService.wsdl" >
         <jaxws:serviceBean>
-            <bean class="com.ontariomd.hrm.service.impl.UploadServiceImpl"/>            
+            <bean class="com.ontariomd.hrm.service.impl.UploadServiceImpl"/>                       
         </jaxws:serviceBean>
          <jaxws:features>
         	 <bean class="org.apache.cxf.feature.LoggingFeature">
@@ -37,8 +73,8 @@
         	 		<value>true</value>
         	 	</property>
         	 </bean>        	 	         	 
-        </jaxws:features>          
-    </jaxws:server>
+        </jaxws:features>              
+    </jaxws:server-->
     
     <bean id="myPasswordCallback" class="com.ontariomd.hrm.service.handler.ServerPasswordCallback" />
 </beans>

@@ -5,7 +5,7 @@
     project="cxf3-ws-client" 
     file="/cxf3-ws-client/target/generated/cxf/com/ontariomd/schemas/hrm/upload/type/UploadMessageMessageInfo.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="299" width="295" x="41" y="322"/>    
+    <position height="-1" width="-1" x="197" y="512"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -16,7 +16,7 @@
     project="cxf3-ws-client" 
     file="/cxf3-ws-client/target/generated/cxf/com/ontariomd/schemas/hrm/upload/type/UploadMessagePatientInfo.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="335" width="203" x="265" y="661"/>    
+    <position height="-1" width="-1" x="602" y="837"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -38,7 +38,7 @@
     project="cxf3-ws-client" 
     file="/cxf3-ws-client/target/generated/cxf/com/ontariomd/schemas/hrm/upload/type/UploadMessageResponse.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="119" width="221" x="354" y="37"/>    
+    <position height="-1" width="-1" x="1364" y="155"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   <enumeration id="5" language="java" name="com.ontariomd.schemas.hrm.upload.type.MessageType" project="cxf3-ws-client" 
     file="/cxf3-ws-client/target/generated/cxf/com/ontariomd/schemas/hrm/upload/type/MessageType.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="243" width="184" x="41" y="661"/>    
+    <position height="-1" width="-1" x="142" y="839"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -70,7 +70,7 @@
     project="cxf3-ws-client" 
     file="/cxf3-ws-client/target/generated/cxf/com/ontariomd/schemas/hrm/upload/type/UploadMessageRecipientInfo.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="230" x="554" y="274"/>    
+    <position height="-1" width="-1" x="719" y="461"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -96,10 +96,10 @@
   <association id="14">    
     <end type="SOURCE" refId="1" navigable="false">      
       <attribute id="15" name="patientInfo">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="236" y="9"/>      
       </attribute>      
       <multiplicity id="16" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="236" y="9"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
@@ -108,10 +108,10 @@
   <association id="17">    
     <end type="SOURCE" refId="3" navigable="false">      
       <attribute id="18" name="messageInfo">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="9" y="41"/>      
       </attribute>      
       <multiplicity id="19" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="9" y="41"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    

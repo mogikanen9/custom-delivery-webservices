@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="UploadService" targetNamespace="http://schemas.ontariomd.com/hrm/upload" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.ontariomd.com/hrm/upload" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://schemas.ontariomd.com/hrm/upload/type">
+<wsdl:definitions name="UploadService" targetNamespace="http://schemas.ontariomd.com/hrm/upload" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.ontariomd.com/hrm/upload" xmlns:ns1="http://schemas.ontariomd.com/hrm/upload/type" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
 <schema xmlns="http://www.w3.org/2001/XMLSchema">
   <import namespace="http://schemas.ontariomd.com/hrm/upload/type" schemaLocation="UploadService_schema1.xsd"/>
-  <import namespace="http://schemas.ontariomd.com/hrm/upload" schemaLocation="UploadService_schema2.xsd"/>
 </schema>
   </wsdl:types>
   <wsdl:message name="uploadMessageResponse">
@@ -15,7 +14,7 @@
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="UploadServiceException">
-    <wsdl:part name="UploadServiceException" element="tns:UploadServiceException">
+    <wsdl:part name="UploadServiceException" element="ns1:UploadServiceException">
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="UploadService">
@@ -29,23 +28,23 @@
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="UploadServiceServiceSoapBinding" type="tns:UploadService">
-    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="uploadMessage">
-      <soap12:operation soapAction="" style="document"/>
+      <soap:operation soapAction="" style="document"/>
       <wsdl:input name="uploadMessage">
-        <soap12:body use="literal"/>
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output name="uploadMessageResponse">
-        <soap12:body use="literal"/>
+        <soap:body use="literal"/>
       </wsdl:output>
       <wsdl:fault name="UploadServiceException">
-        <soap12:fault name="UploadServiceException" use="literal"/>
+        <soap:fault name="UploadServiceException" use="literal"/>
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="UploadService">
     <wsdl:port name="UploadServicePort" binding="tns:UploadServiceServiceSoapBinding">
-      <soap12:address location="http://localhost:9090/UploadServicePort"/>
+      <soap:address location="http://localhost:9090/UploadServicePort"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

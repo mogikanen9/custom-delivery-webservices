@@ -19,7 +19,7 @@ import com.ontariomd.hrm.service.bean.upload.UploadMessageResponse;
 
 @WebService(targetNamespace = "http://schemas.ontariomd.com/hrm/upload")
 @SOAPBinding(style = Style.DOCUMENT, use = Use.LITERAL, parameterStyle = ParameterStyle.BARE)
-@BindingType(javax.xml.ws.soap.SOAPBinding.SOAP12HTTP_BINDING)
+@BindingType(javax.xml.ws.soap.SOAPBinding.SOAP12HTTP_MTOM_BINDING)
 @SchemaValidation(type = SchemaValidationType.BOTH)
 public interface UploadService {
 

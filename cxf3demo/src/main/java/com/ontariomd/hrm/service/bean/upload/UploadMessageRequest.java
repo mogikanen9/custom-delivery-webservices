@@ -20,7 +20,7 @@ public class UploadMessageRequest extends AbstractRequest {
 	@XmlElement(name = "messageInfo", required = true)
 	private UploadMessageMessageInfo messageInfo;
 	
-	@XmlElement(name = "recipients", required = true)
+	@XmlElement(name = "recipients", required = true, type=UploadMessageRecipientInfo.class)
 	private UploadMessageRecipientInfo[] recipients;
 
 	@XmlMimeType("application/octet-stream")

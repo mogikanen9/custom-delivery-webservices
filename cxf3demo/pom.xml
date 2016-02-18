@@ -126,7 +126,7 @@
 							<databinding>jaxb</databinding>
 							<frontend>jaxws</frontend>
 							<sop12>true</sop12>
-							<argline>-createxsdimports</argline>
+							<argline>-createxsdimports</argline>							
 							<serviceName>DeliveryService</serviceName>
 							<attachWsdl>true</attachWsdl>
 						</configuration>
@@ -146,9 +146,10 @@
 							<databinding>jaxb</databinding>
 							<frontend>jaxws</frontend>
 							<sop12>true</sop12>
-							<argline>-createxsdimports</argline>
+							<argline>-createxsdimports</argline>							
 							<serviceName>UploadService</serviceName>
 							<attachWsdl>true</attachWsdl>
+							
 						</configuration>
 					</execution>
 

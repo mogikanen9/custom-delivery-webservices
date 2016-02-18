@@ -1,12 +1,12 @@
-package com.ontariomd.hrm.service.bean.upload;
+package com.ontariomd.hrm.service.bean.delivery;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
-@XmlType(name="MessageType")
+@XmlType(name = "RecipientIdentityType")
 @XmlEnum(String.class)
-public enum MessageType {
-	MR, DI, CRT, BBK, PTH, LAB, MC
+public enum RecipientIdentityType {
+	CPSO, CNO
 }

@@ -5,7 +5,7 @@ import javax.xml.ws.WebFault;
 
 import com.ontariomd.hrm.service.bean.delivery.DeliveryServiceFaultInfo;
 
-@WebFault(name = "DeliveryServiceException", targetNamespace = "http://schemas.ontariomd.com/hrm/delivery")
+@WebFault(name = "DeliveryServiceException", targetNamespace = "http://schemas.ontariomd.com/hrm/delivery/type")
 public class DeliveryServiceException extends Exception{
 
 	private static final long serialVersionUID = 1L;
