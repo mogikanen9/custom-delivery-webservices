@@ -1,0 +1,11 @@
+*.classpath
+cxf3-ws-client/.project
+*.prefs
+cxf3-ws-server/.project
+cxf3-ws-server/out.txt
+*.project
+cxf3demo/.settings/.jsdtscope
+cxf3demo/.settings/org.eclipse.wst.common.component
+*.xml
+cxf3demo/.settings/org.eclipse.wst.jsdt.ui.superType.container
+cxf3demo/.settings/org.eclipse.wst.jsdt.ui.superType.name

@@ -27,7 +27,7 @@ import com.ontariomd.schemas.hrm.delivery.type.GetNewMessagesResponse;
 public class SimpleWSClientMainRun {
 
 	 public final static QName SERVICE = new QName("http://schemas.ontariomd.com/hrm/delivery", "DeliveryService");
-	private static final String DELIVERY_SERVICE_URL = "http://localhost:8180/cxf3demo/services/deliveryService?wsdl";
+	private static final String DELIVERY_SERVICE_URL = "http://localhost:8080/cxf3demo/services/deliveryService?wsdl";
 
 	
 	public static void main(String[] args) {
