@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="UploadService" targetNamespace="http://schemas.ontariomd.com/hrm/upload" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.ontariomd.com/hrm/upload" xmlns:ns1="http://schemas.ontariomd.com/hrm/upload/type" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:definitions name="UploadService" targetNamespace="http://schemas.mogikanensoftware.com/upload" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.mogikanensoftware.com/upload" xmlns:ns1="http://schemas.mogikanensoftware.com/upload/type" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
 <schema xmlns="http://www.w3.org/2001/XMLSchema">
-  <import namespace="http://schemas.ontariomd.com/hrm/upload/type" schemaLocation="UploadService_schema1.xsd"/>
+  <import namespace="http://schemas.mogikanensoftware.com/upload/type" schemaLocation="UploadService_schema1.xsd"/>
 </schema>
   </wsdl:types>
-  <wsdl:message name="uploadMessageResponse">
-    <wsdl:part name="uploadMessageResponse" element="ns1:uploadMessageResponse">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:message name="uploadMessage">
     <wsdl:part name="uploadMessageRequest" element="ns1:uploadMessageRequest">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="UploadServiceException">
     <wsdl:part name="UploadServiceException" element="ns1:UploadServiceException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="uploadMessageResponse">
+    <wsdl:part name="uploadMessageResponse" element="ns1:uploadMessageResponse">
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="UploadService">

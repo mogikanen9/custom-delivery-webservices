@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="DeliveryService" targetNamespace="http://schemas.ontariomd.com/hrm/delivery" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.ontariomd.com/hrm/delivery" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://schemas.ontariomd.com/hrm/delivery/type">
+<wsdl:definitions name="DeliveryService" targetNamespace="http://schemas.mogikanensoftware.com/delivery" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.mogikanensoftware.com/delivery" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://schemas.mogikanensoftware.com/delivery/type">
   <wsdl:types>
 <schema xmlns="http://www.w3.org/2001/XMLSchema">
-  <import namespace="http://schemas.ontariomd.com/hrm/delivery/type" schemaLocation="DeliveryService_schema1.xsd"/>
-  <import namespace="http://schemas.ontariomd.com/hrm/delivery" schemaLocation="DeliveryService_schema2.xsd"/>
+  <import namespace="http://schemas.mogikanensoftware.com/delivery/type" schemaLocation="DeliveryService_schema1.xsd"/>
 </schema>
   </wsdl:types>
+  <wsdl:message name="getNewMessagesResponse">
+    <wsdl:part name="getNewMessagesResponse" element="ns1:getNewMessagesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateMessageStatusResponse">
+    <wsdl:part name="updateMessageStatusResponse" element="ns1:updateMessageStatusResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateMessageStatus">
+    <wsdl:part name="updateMessageStatusRequest" element="ns1:updateMessageStatusRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNewMessages">
+    <wsdl:part name="getNewMessagesRequest" element="ns1:getNewMessagesRequest">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="downloadMessage">
     <wsdl:part name="downloadMessageRequest" element="ns1:downloadMessageRequest">
     </wsdl:part>
@@ -15,23 +30,7 @@
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="DeliveryServiceException">
-    <wsdl:part name="DeliveryServiceException" element="tns:DeliveryServiceException">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getNewMessagesResponse">
-    <wsdl:part name="getNewMessagesResponse" element="ns1:getNewMessagesResponse">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getNewMessages">
-    <wsdl:part name="getNewMessagesRequest" element="ns1:getNewMessagesRequest">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="updateMessageStatus">
-    <wsdl:part name="updateMessageStatusRequest" element="ns1:updateMessageStatusRequest">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="updateMessageStatusResponse">
-    <wsdl:part name="updateMessageStatusResponse" element="ns1:updateMessageStatusResponse">
+    <wsdl:part name="DeliveryServiceException" element="ns1:DeliveryServiceException">
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="DeliveryService">
@@ -43,18 +42,18 @@
       <wsdl:fault name="DeliveryServiceException" message="tns:DeliveryServiceException">
     </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="getNewMessages">
-      <wsdl:input name="getNewMessages" message="tns:getNewMessages">
-    </wsdl:input>
-      <wsdl:output name="getNewMessagesResponse" message="tns:getNewMessagesResponse">
-    </wsdl:output>
-      <wsdl:fault name="DeliveryServiceException" message="tns:DeliveryServiceException">
-    </wsdl:fault>
-    </wsdl:operation>
     <wsdl:operation name="updateMessageStatus">
       <wsdl:input name="updateMessageStatus" message="tns:updateMessageStatus">
     </wsdl:input>
       <wsdl:output name="updateMessageStatusResponse" message="tns:updateMessageStatusResponse">
+    </wsdl:output>
+      <wsdl:fault name="DeliveryServiceException" message="tns:DeliveryServiceException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getNewMessages">
+      <wsdl:input name="getNewMessages" message="tns:getNewMessages">
+    </wsdl:input>
+      <wsdl:output name="getNewMessagesResponse" message="tns:getNewMessagesResponse">
     </wsdl:output>
       <wsdl:fault name="DeliveryServiceException" message="tns:DeliveryServiceException">
     </wsdl:fault>
@@ -74,24 +73,24 @@
         <soap12:fault name="DeliveryServiceException" use="literal"/>
       </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="getNewMessages">
-      <soap12:operation soapAction="getNewMessages" style="document"/>
-      <wsdl:input name="getNewMessages">
-        <soap12:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="getNewMessagesResponse">
-        <soap12:body use="literal"/>
-      </wsdl:output>
-      <wsdl:fault name="DeliveryServiceException">
-        <soap12:fault name="DeliveryServiceException" use="literal"/>
-      </wsdl:fault>
-    </wsdl:operation>
     <wsdl:operation name="updateMessageStatus">
       <soap12:operation soapAction="updateMessageStatus" style="document"/>
       <wsdl:input name="updateMessageStatus">
         <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output name="updateMessageStatusResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DeliveryServiceException">
+        <soap12:fault name="DeliveryServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getNewMessages">
+      <soap12:operation soapAction="getNewMessages" style="document"/>
+      <wsdl:input name="getNewMessages">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNewMessagesResponse">
         <soap12:body use="literal"/>
       </wsdl:output>
       <wsdl:fault name="DeliveryServiceException">

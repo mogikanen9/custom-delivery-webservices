@@ -1,4 +1,4 @@
-<xs:schema xmlns:tns="http://schemas.ontariomd.com/hrm/upload/type" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.ontariomd.com/hrm/upload/type">
+<xs:schema xmlns:tns="http://schemas.mogikanensoftware.com/upload/type" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.mogikanensoftware.com/upload/type">
   <xs:import namespace="http://www.w3.org/2005/05/xmlmime"/>
   <xs:element name="messageType" type="tns:MessageType"/>
   <xs:element name="recipientIdentityType" type="tns:RecipientIdentityType"/>

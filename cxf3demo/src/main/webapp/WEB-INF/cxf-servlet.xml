@@ -5,7 +5,7 @@
 		xmlns:soap="http://cxf.apache.org/bindings/soap" 
 		xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	<!-- DeliveryService -->
-	<jaxws:endpoint id="jaxwsDeliveryService" implementor="com.ontariomd.hrm.service.impl.DeliveryServiceImpl"
+	<jaxws:endpoint id="jaxwsDeliveryService" implementor="com.mogikanensoftware.delivery.service.impl.DeliveryServiceImpl"
 		address="/deliveryService" publish="true" wsdlLocation="WEB-INF/wsdl/DeliveryService.wsdl">
 		<jaxws:properties>
 			<entry key="mtom-enabled" value="true" />			
@@ -21,7 +21,7 @@
 	</jaxws:endpoint>  
     
     <!-- UploadService -->    
-    <jaxws:endpoint id="jaxwsUploadService" implementor="com.ontariomd.hrm.service.impl.UploadServiceImpl"
+    <jaxws:endpoint id="jaxwsUploadService" implementor="com.mogikanensoftware.delivery.service.impl.UploadServiceImpl"
 		address="/uploadService" publish="true" wsdlLocation="WEB-INF/wsdl/UploadService.wsdl">
 		<jaxws:properties>
 			<entry key="mtom-enabled" value="true" />			
@@ -36,10 +36,10 @@
 		</jaxws:features>
 	</jaxws:endpoint>
     
-      <!-- jaxws:server id="jaxwsDeliveryService" serviceClass="com.ontariomd.hrm.service.DeliveryService" 
+      <!-- jaxws:server id="jaxwsDeliveryService" serviceClass="com.mogikanensoftware.delivery.service.DeliveryService" 
     address="/deliveryService" wsdlLocation="WEB-INF/wsdl/DeliveryService.wsdl">
         <jaxws:serviceBean>
-            <bean class="com.ontariomd.hrm.service.impl.DeliveryServiceImpl"/>            
+            <bean class="com.mogikanensoftware.delivery.service.impl.DeliveryServiceImpl"/>            
         </jaxws:serviceBean>
         <jaxws:features>
         	 <bean class="org.apache.cxf.feature.LoggingFeature">
@@ -62,10 +62,10 @@
         </jaxws:inInterceptors>      
     </jaxws:server-->
     
-    <!-- jaxws:server id="jaxwsUploadService" serviceClass="com.ontariomd.hrm.service.UploadService" address="/uploadService" 
+    <!-- jaxws:server id="jaxwsUploadService" serviceClass="com.mogikanensoftware.delivery.service.UploadService" address="/uploadService" 
     		 wsdlLocation="WEB-INF/wsdl/UploadService.wsdl" >
         <jaxws:serviceBean>
-            <bean class="com.ontariomd.hrm.service.impl.UploadServiceImpl"/>                       
+            <bean class="com.mogikanensoftware.delivery.service.impl.UploadServiceImpl"/>                       
         </jaxws:serviceBean>
          <jaxws:features>
         	 <bean class="org.apache.cxf.feature.LoggingFeature">
@@ -76,5 +76,5 @@
         </jaxws:features>              
     </jaxws:server-->
     
-    <bean id="myPasswordCallback" class="com.ontariomd.hrm.service.handler.ServerPasswordCallback" />
+    <bean id="myPasswordCallback" class="com.mogikanensoftware.delivery.service.handler.ServerPasswordCallback" />
 </beans>
