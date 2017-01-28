@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by (OntarioMD) -->
 <!-- HRM-XSD Schema v1.1.1 / EMR 4.1 / Publish Date: March 8, 2013 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cdst="cds_dt" targetNamespace="cds_dt" elementFormDefault="qualified">
 	<xs:complexType name="address">
