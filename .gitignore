@@ -6,6 +6,6 @@ cxf3-ws-server/out.txt
 *.project
 cxf3demo/.settings/.jsdtscope
 cxf3demo/.settings/org.eclipse.wst.common.component
-*.xml
 cxf3demo/.settings/org.eclipse.wst.jsdt.ui.superType.container
 cxf3demo/.settings/org.eclipse.wst.jsdt.ui.superType.name
+cxf3demo/.settings/org.eclipse.wst.common.project.facet.core.xml
